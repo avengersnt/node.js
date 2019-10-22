@@ -14,7 +14,7 @@ app.post('/test', function(req, res) {
   var lat =  req.body.lat
   var lng =  req.body.lng
   var options = {
-      url: 'https://map.yahooapis.jp/search/local/V1/localSearch?output=json&appid=dj00aiZpPWk0clhRdTdrVVd0ZiZzPWNvbnN1bWVyc2VjcmV0Jng9ZDA-&gc=0306005&lat='+ lat +'&lon='+ lng +'&dist=3',
+      url: 'https://map.yahooapis.jp/search/local/V1/localSearch?output=json&appid=dj00aiZpPWk0clhRdTdrVVd0ZiZzPWNvbnN1bWVyc2VjcmV0Jng9ZDA-&gc=0306005&lat='+ lat +'&lon='+ lng +'&dist=0.5&results=5&sort=dist',
       method: 'GET',
       json: true
   }
@@ -40,6 +40,7 @@ app.post('/test', function(req, res) {
     lng[i] = result[1]
 
   }
+
   console.log(lat);
 　console.log(lng);
   res.send({
@@ -47,6 +48,8 @@ app.post('/test', function(req, res) {
     lng: lng,
 
   })
+
+
 
   })
 
